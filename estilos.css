@@ -1,0 +1,414 @@
+/* ==========================================
+   ESTILOS GENERALES Y VARIABLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b0f19;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   ENCABEZADO Y MENÚ DE NAVEGACIÓN
+   ========================================== */
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00bfff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: #00bfff;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ==========================================
+   SECCIÓN INICIO (PORTADA / HERO)
+   ========================================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Aquí configuramos tu imagen de fondo */
+  background-image: url('IMAGEN DE FONDO.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 20px;
+}
+
+/* Capa oscura semitransparente sobre la imagen para leer el texto */
+.capa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 8, 15, 0.75);
+  z-index: 1;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.etiqueta {
+  color: #00bfff;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #d1d5db;
+  margin-bottom: 30px;
+}
+
+/* Botones */
+.boton {
+  display: inline-block;
+  background-color: #00bfff;
+  color: #05080f;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #009acd;
+  transform: translateY(-2px);
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #00bfff;
+}
+
+.boton-secundario:hover {
+  background-color: #00bfff;
+  color: #05080f;
+}
+
+/* ==========================================
+   ESTILOS COMUNES DE SECCIONES
+   ========================================== */
+.seccion {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenedor {
+  width: 100%;
+}
+
+.subtitulo {
+  color: #00bfff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.seccion h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.descripcion {
+  color: #9ca3af;
+  margin-bottom: 50px;
+  max-width: 600px;
+}
+
+/* ==========================================
+   SECCIÓN SERVICIOS (TARJETAS)
+   ========================================== */
+.contenido-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.tarjeta {
+  background-color: #131b2e;
+  padding: 35px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  border-color: #00bfff;
+}
+
+.tarjeta span {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ==========================================
+   SECCIÓN GALERÍA DE TRABAJOS
+   ========================================== */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.galeria-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #131b2e;
+  height: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+
+.galeria-titulo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(5, 8, 15, 0.9), transparent);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ==========================================
+   SECCIÓN NOSOTROS
+   ========================================== */
+.nosotros-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.nosotros-texto p {
+  color: #9ca3af;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.nosotros-imagen {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #131b2e;
+}
+
+.nosotros-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagen-ayuda {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #00bfff;
+}
+
+.nosotros-valores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.valor {
+  background-color: #131b2e;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.valor-icono {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.valor h3 {
+  margin-bottom: 10px;
+}
+
+.valor p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ==========================================
+   SECCIÓN CONTACTO (FORMULARIO)
+   ========================================== */
+.contacto {
+  background-color: #131b2e;
+  border-radius: 16px;
+  padding: 60px;
+  margin-bottom: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  padding: 14px;
+  background-color: #0b0f19;
+  border: 1px solid rgba(255, 255, 25, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.contacto input:focus,
+.contacto textarea:focus {
+  border-color: #00bfff;
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #05080f;
+  color: #9ca3af;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (MÓVILES)
+   ========================================== */
+@media (max-width: 768px) {
+  .menu-links {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .nosotros-principal {
+    grid-template-columns: 1fr;
+  }
+  .nosotros-valores {
+    grid-template-columns: 1fr;
+  }
+  .contacto {
+    padding: 30px 20px;
+  }
+}
